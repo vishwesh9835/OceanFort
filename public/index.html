@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Oceanfort Hotel - Experience luxury seaside living with panoramic ocean views, premium suites, and world-class amenities." />
+  <title>Oceanfort Hotel | Luxury Coastal Retreat</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="brand">
+        <img src="logo.jpg" alt="Oceanfort Logo" class="brand-logo" />
+        <span class="brand-name">Oceanfort</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">The Hotel</a>
+        <a href="#rooms">Suites</a>
+        <a href="#offers">Offers</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a href="#booking-form" class="btn btn-primary btn-nav">Book Now</a>
+      </nav>
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-container">
+        <div class="hero-content fade-in-up">
+          <h1>Sanctuary by the Sea</h1>
+          <p>Discover the perfect harmony of luxury and nature. Wake to panoramic ocean views, private beach access, and
+            curated coastal hospitality.</p>
+          <div class="cta-group">
+            <a href="#rooms" class="btn btn-primary">Discover Suites</a>
+            <a href="#about" class="btn btn-outline">Our Story</a>
+          </div>
+        </div>
+
+        <!-- Quick Booking Bar -->
+        <div class="booking-wrapper fade-in-up delay-1">
+          <form id="booking-form" class="booking-bar">
+            <div class="input-group">
+              <label for="checkin">Check In</label>
+              <input type="date" id="checkin" required />
+            </div>
+            <div class="input-group">
+              <label for="checkout">Check Out</label>
+              <input type="date" id="checkout" required />
+            </div>
+            <div class="input-group">
+              <label for="guests">Guests</label>
+              <select id="guests">
+                <option value="1">1 Guest</option>
+                <option value="2" selected>2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4+">4+ Guests</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="roomtype">Room Type</label>
+              <select id="roomtype">
+                <option value="Deluxe Ocean">Deluxe Ocean</option>
+                <option value="Family Suite">Family Suite</option>
+                <option value="Garden Villa">Garden Villa</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-book">Availability</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <span class="stat-number" data-target="12">0</span>
+          <span class="stat-unit">+</span>
+          <p class="stat-label">Years of Excellence</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="5200">0</span>
+          <span class="stat-unit">+</span>
+          <p class="stat-label">Happy Guests</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="3">0</span>
+          <span class="stat-unit"></span>
+          <p class="stat-label">Luxury Suite Types</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="98">0</span>
+          <span class="stat-unit">%</span>
+          <p class="stat-label">Guest Satisfaction</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+      <div class="container grid about-grid">
+        <div class="about-image reveal-left">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1600&auto=format&fit=crop"
+            alt="Hotel Interior" class="img-full" />
+          <div class="image-accent"></div>
+        </div>
+        <div class="about-text reveal-right">
+          <span class="overline">The Oceanfort Story</span>
+          <h2 class="section-title">Redefining Coastal Luxury</h2>
+          <p>Nestled along the pristine coastline of Goa, Oceanfort offers more than just a stay—it offers a reset. Our
+            spaces are designed with sustainable architecture and locally sourced materials that breathe with the ocean
+            air.</p>
+          <ul class="features-list">
+            <li><i class="accent-dot">✦</i> Private Beach Access</li>
+            <li><i class="accent-dot">✦</i> Michelin-Star Seaside Dining</li>
+            <li><i class="accent-dot">✦</i> Award-Winning Wellness Spa</li>
+            <li><i class="accent-dot">✦</i> Personalized Concierge Service</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-dark">Plan Your Visit</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="section bg-light rooms">
+      <div class="container">
+        <div class="section-header text-center fade-in-up">
+          <span class="overline">Accommodation</span>
+          <h2 class="section-title">Curated Suites</h2>
+          <p class="section-subtitle">Each suite is a blend of Mediterranean elegance and modern comfort.</p>
+        </div>
+
+        <div class="grid rooms-grid">
+          <!-- Room 1 -->
+          <article class="room-card fade-in-up">
+            <div class="room-img">
+              <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1600&auto=format&fit=crop"
+                alt="Sea View Deluxe" loading="lazy" />
+              <span class="price-tag">₹9,900/night</span>
+            </div>
+            <div class="room-details">
+              <h3>Sea View Deluxe</h3>
+              <p>Panoramic ocean views with a private terrace and rain shower.</p>
+              <div class="room-meta">
+                <span>45m²</span> <span>King Bed</span> <span>Balcony</span>
+              </div>
+              <button class="btn btn-link" onclick="selectRoom('Deluxe Ocean')">View Details →</button>
+            </div>
+          </article>
+
+          <!-- Room 2 -->
+          <article class="room-card fade-in-up delay-1">
+            <div class="room-img">
+              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop"
+                alt="Royal Family Suite" loading="lazy" />
+              <span class="price-tag">₹14,500/night</span>
+            </div>
+            <div class="room-details">
+              <h3>Royal Family Suite</h3>
+              <p>Spacious two-bedroom living for families with exclusive lounge access.</p>
+              <div class="room-meta">
+                <span>80m²</span> <span>2 Bedrooms</span> <span>Kitchenette</span>
+              </div>
+              <button class="btn btn-link" onclick="selectRoom('Family Suite')">View Details →</button>
+            </div>
+          </article>
+
+          <!-- Room 3 -->
+          <article class="room-card fade-in-up delay-2">
+            <div class="room-img">
+              <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=1600&auto=format&fit=crop"
+                alt="Garden Villa" loading="lazy" />
+              <span class="price-tag">₹18,000/night</span>
+            </div>
+            <div class="room-details">
+              <h3>Garden Private Villa</h3>
+              <p>A secluded sanctuary featuring a private plunge pool and garden.</p>
+              <div class="room-meta">
+                <span>110m²</span> <span>Private Pool</span> <span>Secluded</span>
+              </div>
+              <button class="btn btn-link" onclick="selectRoom('Garden Villa')">View Details →</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section id="offers" class="section offers">
+      <div class="container">
+        <div class="section-header text-center fade-in-up">
+          <span class="overline">Exclusive Deals</span>
+          <h2 class="section-title">Special Packages</h2>
+          <p class="section-subtitle">Curated experiences crafted for every kind of traveller.</p>
+        </div>
+        <div class="grid offers-grid">
+          <div class="offer-card fade-in-up">
+            <div class="offer-badge">Most Popular</div>
+            <span class="offer-icon">🌅</span>
+            <h3>Honeymoon Escape</h3>
+            <p>Rose-petal turndown, sunset cruise, couples spa ritual &amp; candlelit beach dinner included.</p>
+            <div class="offer-price">From <strong>₹28,000</strong> / couple</div>
+            <a href="#contact" class="btn btn-primary">Enquire Now</a>
+          </div>
+          <div class="offer-card fade-in-up delay-1">
+            <span class="offer-icon">👨‍👩‍👧‍👦</span>
+            <h3>Family Fun Package</h3>
+            <p>Complimentary kids' meals, guided beach activities &amp; a free room upgrade for families of 4+.</p>
+            <div class="offer-price">From <strong>₹18,500</strong> / night</div>
+            <a href="#contact" class="btn btn-primary">Enquire Now</a>
+          </div>
+          <div class="offer-card fade-in-up delay-2">
+            <span class="offer-icon">🧘</span>
+            <h3>Wellness Retreat</h3>
+            <p>5-night stay with daily Ayurvedic therapy, sunrise yoga, detox meals &amp; a private pool villa.</p>
+            <div class="offer-price">From <strong>₹72,000</strong> / 5 nights</div>
+            <a href="#contact" class="btn btn-primary">Enquire Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="section amenities">
+      <div class="container">
+        <div class="section-header text-center fade-in-up">
+          <span class="overline">Experience</span>
+          <h2 class="section-title">Beyond the Room</h2>
+        </div>
+        <div class="grid amenities-grid">
+          <div class="amenity-item fade-in-up">
+            <span class="icon">🏊</span>
+            <h4>Infinity Pool</h4>
+            <p>Swim at the edge of the world with views of the Arabian Sea.</p>
+          </div>
+          <div class="amenity-item fade-in-up delay-1">
+            <span class="icon">🧖</span>
+            <h4>Lotus Spa</h4>
+            <p>Traditional Ayurvedic treatments and modern wellness therapies.</p>
+          </div>
+          <div class="amenity-item fade-in-up delay-2">
+            <span class="icon">🍽️</span>
+            <h4>Azure Dining</h4>
+            <p>Savor fresh, locally-sourced seafood under the starlit sky.</p>
+          </div>
+          <div class="amenity-item fade-in-up delay-3">
+            <span class="icon">🏋️</span>
+            <h4>Fitness Hub</h4>
+            <p>Top-tier equipment with a view to keep you energized.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+      <div class="container">
+        <div class="section-header text-center fade-in-up">
+          <span class="overline">Life at Oceanfort</span>
+          <h2 class="section-title">The Visual Story</h2>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item gi-tall fade-in-up">
+            <img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?q=80&w=800&auto=format&fit=crop"
+              alt="Infinity Pool" loading="lazy" />
+            <div class="gallery-overlay"><span>Infinity Pool</span></div>
+          </div>
+          <div class="gallery-item fade-in-up delay-1">
+            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=800&auto=format&fit=crop"
+              alt="Suite Interior" loading="lazy" />
+            <div class="gallery-overlay"><span>Deluxe Suite</span></div>
+          </div>
+          <div class="gallery-item fade-in-up delay-1">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop"
+              alt="Fine Dining" loading="lazy" />
+            <div class="gallery-overlay"><span>Azure Dining</span></div>
+          </div>
+          <div class="gallery-item gi-wide fade-in-up delay-2">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop"
+              alt="Private Beach" loading="lazy" />
+            <div class="gallery-overlay"><span>Private Beach</span></div>
+          </div>
+          <div class="gallery-item fade-in-up delay-2">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop"
+              alt="Lotus Spa" loading="lazy" />
+            <div class="gallery-overlay"><span>Lotus Spa</span></div>
+          </div>
+          <div class="gallery-item gi-wide fade-in-up delay-3">
+            <img src="https://images.unsplash.com/photo-1563911302283-d2bc129e7570?q=80&w=1200&auto=format&fit=crop"
+              alt="Sunset Lounge" loading="lazy" />
+            <div class="gallery-overlay"><span>Sunset Lounge</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-dark testimonials">
+      <div class="container text-center">
+        <span class="overline" style="color: var(--accent)">Guest Stories</span>
+        <div class="testimonial-slider fade-in-up">
+          <div class="testimonial-track" id="testimonial-track">
+            <div class="testimonial-slide active">
+              <p class="quote">"An unforgettable retreat. The breathtaking ocean views and impeccable service made it
+                the finest vacation we've ever experienced. Truly a sanctuary."</p>
+              <cite>— Elena Richardson, London</cite>
+            </div>
+            <div class="testimonial-slide">
+              <p class="quote">"The culinary experience at Azure Dining was world-class. Each dish was a masterpiece of
+                local flavours and premium presentation. We'll be back."</p>
+              <cite>— Marco Rossi, Milan</cite>
+            </div>
+            <div class="testimonial-slide">
+              <p class="quote">"Pure bliss. The Lotus Spa treatments left me completely rejuvenated. The infinity pool
+                at sunset is something you have to witness for yourself."</p>
+              <cite>— Sarah Johnson, New York</cite>
+            </div>
+            <div class="testimonial-slide">
+              <p class="quote">"The Garden Villa with its private plunge pool was absolute perfection. Every detail —
+                from the linens to the welcome hamper — felt deeply personal and luxurious."</p>
+              <cite>— Priya Menon, Mumbai</cite>
+            </div>
+          </div>
+
+          <div class="testimonial-dots" id="testimonial-dots">
+            <!-- Dots will be generated dynamically via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Properties Section -->
+    <section id="properties" class="section properties">
+      <div class="container">
+        <div class="section-header text-center fade-in-up">
+          <span class="overline">Our Locations</span>
+          <h2 class="section-title">Oceanfort Across India</h2>
+          <p class="section-subtitle">Six exceptional properties, each shaped by the soul of its destination.</p>
+        </div>
+
+        <!-- City Tabs -->
+        <div class="prop-tabs fade-in-up" id="prop-tabs">
+          <button class="prop-tab active" data-city="goa">Goa</button>
+          <button class="prop-tab" data-city="mumbai">Mumbai</button>
+          <button class="prop-tab" data-city="jaipur">Jaipur</button>
+          <button class="prop-tab" data-city="pondicherry">Pondicherry</button>
+          <button class="prop-tab" data-city="kerala">Kerala</button>
+          <button class="prop-tab" data-city="andaman">Andaman</button>
+        </div>
+
+        <!-- Property Cards -->
+        <div class="prop-panels">
+
+          <!-- Goa -->
+          <div class="prop-panel active" id="prop-goa">
+            <div class="prop-inner">
+              <div class="prop-img-wrap">
+                <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1000&auto=format&fit=crop"
+                  alt="Oceanfort Goa" />
+                <span class="prop-badge">Flagship</span>
+              </div>
+              <div class="prop-info">
+                <div class="prop-header">
+                  <div>
+                    <h3>Oceanfort Goa</h3>
+                    <p class="prop-location">📍 Calangute Beach, North Goa</p>
+                  </div>
+                  <div class="prop-rating"><span>9.4</span><small>Exceptional</small></div>
+                </div>
+                <p class="prop-desc">Our flagship property perched above the Arabian Sea with 48 ocean-facing suites, a
+                  private beach, and Goa's most acclaimed coastal dining.</p>
+                <div class="prop-tags">
+                  <span>Private Beach</span><span>Infinity Pool</span><span>Spa</span><span>Pet Friendly</span>
+                </div>
+                <h4 class="pricing-title">Best Time to Visit</h4>
+                <div class="pricing-rows">
+                  <div class="pricing-row highlight"><span>November – February</span><span class="prange">₹9,900 –
+                      ₹18,000 / night</span><span class="pbadge peak">Peak Season</span></div>
+                  <div class="pricing-row"><span>March – May</span><span class="prange">₹7,500 – ₹13,500 /
+                      night</span><span class="pbadge">Shoulder</span></div>
+                  <div class="pricing-row"><span>June – October</span><span class="prange">₹5,000 – ₹9,000 /
+                      night</span><span class="pbadge deal">Best Deals</span></div>
+                </div>
+                <a href="#booking-form" class="btn btn-primary">Book Goa Stay</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mumbai -->
+          <div class="prop-panel" id="prop-mumbai">
+            <div class="prop-inner">
+              <div class="prop-img-wrap">
+                <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=1000&auto=format&fit=crop"
+                  alt="Oceanfort Mumbai" />
+                <span class="prop-badge">City Retreat</span>
+              </div>
+              <div class="prop-info">
+                <div class="prop-header">
+                  <div>
+                    <h3>Oceanfort Mumbai</h3>
+                    <p class="prop-location">📍 Marine Drive, South Mumbai</p>
+                  </div>
+                  <div class="prop-rating"><span>9.1</span><small>Exceptional</small></div>
+                </div>
+                <p class="prop-desc">A skyline sanctuary on Marine Drive with panoramic views of the Queen's Necklace,
+                  rooftop dining, and curated art-deco interiors.</p>
+                <div class="prop-tags">
+                  <span>Sea View Rooms</span><span>Rooftop Bar</span><span>Business Centre</span><span>Concierge</span>
+                </div>
+                <h4 class="pricing-title">Best Time to Visit</h4>
+                <div class="pricing-rows">
+                  <div class="pricing-row highlight"><span>October – March</span><span class="prange">₹12,000 – ₹22,000
+                      / night</span><span class="pbadge peak">Peak Season</span></div>
+                  <div class="pricing-row"><span>April – June</span><span class="prange">₹9,000 – ₹16,000 /
+                      night</span><span class="pbadge">Shoulder</span></div>
+                  <div class="pricing-row"><span>July – September</span><span class="prange">₹6,500 – ₹11,000 /
+                      night</span><span class="pbadge deal">Best Deals</span></div>
+                </div>
+                <a href="#contact" class="btn btn-primary">Enquire Mumbai</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Jaipur -->
+          <div class="prop-panel" id="prop-jaipur">
+            <div class="prop-inner">
+              <div class="prop-img-wrap">
+                <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1000&auto=format&fit=crop"
+                  alt="Oceanfort Jaipur" />
+                <span class="prop-badge">Heritage</span>
+              </div>
+              <div class="prop-info">
+                <div class="prop-header">
+                  <div>
+                    <h3>Oceanfort Jaipur</h3>
+                    <p class="prop-location">📍 Civil Lines, Jaipur, Rajasthan</p>
+                  </div>
+                  <div class="prop-rating"><span>9.0</span><small>Exceptional</small></div>
+                </div>
+                <p class="prop-desc">A restored Rajput haveli reimagined as a desert luxury retreat with rose-water
+                  pools, hand-crafted furnishings, and royal dining under the stars.</p>
+                <div class="prop-tags">
+                  <span>Heritage Pool</span><span>Desert Safari</span><span>Ayurveda Spa</span><span>Royal Dining</span>
+                </div>
+                <h4 class="pricing-title">Best Time to Visit</h4>
+                <div class="pricing-rows">
+                  <div class="pricing-row highlight"><span>October – February</span><span class="prange">₹11,000 –
+                      ₹20,000 / night</span><span class="pbadge peak">Peak Season</span></div>
+                  <div class="pricing-row"><span>March – April</span><span class="prange">₹8,000 – ₹14,000 /
+                      night</span><span class="pbadge">Shoulder</span></div>
+                  <div class="pricing-row"><span>May – September</span><span class="prange">₹5,500 – ₹9,500 /
+                      night</span><span class="pbadge deal">Best Deals</span></div>
+                </div>
+                <a href="#contact" class="btn btn-primary">Enquire Jaipur</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pondicherry -->
+          <div class="prop-panel" id="prop-pondicherry">
+            <div class="prop-inner">
+              <div class="prop-img-wrap">
+                <img src="https://images.unsplash.com/photo-1584553421349-3557471bed79?q=80&w=1000&auto=format&fit=crop"
+                  alt="Oceanfort Pondicherry" />
+                <span class="prop-badge">French Riviera</span>
+              </div>
+              <div class="prop-info">
+                <div class="prop-header">
+                  <div>
+                    <h3>Oceanfort Pondicherry</h3>
+                    <p class="prop-location">📍 White Town, Pondicherry</p>
+                  </div>
+                  <div class="prop-rating"><span>9.2</span><small>Exceptional</small></div>
+                </div>
+                <p class="prop-desc">A colonial-era villa on the promenade of Pondicherry's French Quarter, blending
+                  Tamil heritage with European elegance and beachfront tranquillity.</p>
+                <div class="prop-tags">
+                  <span>Promenade View</span><span>French Bistro</span><span>Yoga Retreat</span><span>Cycling
+                    Tours</span>
+                </div>
+                <h4 class="pricing-title">Best Time to Visit</h4>
+                <div class="pricing-rows">
+                  <div class="pricing-row highlight"><span>October – March</span><span class="prange">₹8,500 – ₹15,000 /
+                      night</span><span class="pbadge peak">Peak Season</span></div>
+                  <div class="pricing-row"><span>April – June</span><span class="prange">₹6,000 – ₹10,500 /
+                      night</span><span class="pbadge">Shoulder</span></div>
+                  <div class="pricing-row"><span>July – September</span><span class="prange">₹4,500 – ₹8,000 /
+                      night</span><span class="pbadge deal">Best Deals</span></div>
+                </div>
+                <a href="#contact" class="btn btn-primary">Enquire Pondicherry</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kerala -->
+          <div class="prop-panel" id="prop-kerala">
+            <div class="prop-inner">
+              <div class="prop-img-wrap">
+                <img src="https://images.unsplash.com/photo-1593693411515-c20261bcad6e?q=80&w=1000&auto=format&fit=crop"
+                  alt="Oceanfort Kerala" />
+                <span class="prop-badge">Backwaters</span>
+              </div>
+              <div class="prop-info">
+                <div class="prop-header">
+                  <div>
+                    <h3>Oceanfort Kerala</h3>
+                    <p class="prop-location">📍 Alleppey Backwaters, Kerala</p>
+                  </div>
+                  <div class="prop-rating"><span>9.3</span><small>Exceptional</small></div>
+                </div>
+                <p class="prop-desc">A floating sanctuary on Kerala's legendary backwaters — overwater villas, private
+                  houseboat cruises, traditional Kathakali evenings, and authentic Sadya dining.</p>
+                <div class="prop-tags">
+                  <span>Overwater Villas</span><span>Houseboat Cruise</span><span>Panchakarma</span><span>Nature
+                    Trails</span>
+                </div>
+                <h4 class="pricing-title">Best Time to Visit</h4>
+                <div class="pricing-rows">
+                  <div class="pricing-row highlight"><span>September – March</span><span class="prange">₹10,500 –
+                      ₹19,000 / night</span><span class="pbadge peak">Peak Season</span></div>
+                  <div class="pricing-row"><span>April – May</span><span class="prange">₹7,500 – ₹13,000 /
+                      night</span><span class="pbadge">Shoulder</span></div>
+                  <div class="pricing-row"><span>June – August</span><span class="prange">₹5,000 – ₹9,500 /
+                      night</span><span class="pbadge deal">Best Deals</span></div>
+                </div>
+                <a href="#contact" class="btn btn-primary">Enquire Kerala</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Andaman -->
+          <div class="prop-panel" id="prop-andaman">
+            <div class="prop-inner">
+              <div class="prop-img-wrap">
+                <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?q=80&w=1000&auto=format&fit=crop"
+                  alt="Oceanfort Andaman" />
+                <span class="prop-badge">Island Escape</span>
+              </div>
+              <div class="prop-info">
+                <div class="prop-header">
+                  <div>
+                    <h3>Oceanfort Andaman</h3>
+                    <p class="prop-location">📍 Havelock Island, Andaman</p>
+                  </div>
+                  <div class="prop-rating"><span>9.5</span><small>Exceptional</small></div>
+                </div>
+                <p class="prop-desc">Our most secluded property — eco-luxury beachfront villas on Radhanagar Beach,
+                  featuring bioluminescent bay kayaking, coral reef diving, and off-grid luxury.</p>
+                <div class="prop-tags">
+                  <span>Beachfront Villas</span><span>Scuba Diving</span><span>Snorkelling</span><span>Eco-Luxury</span>
+                </div>
+                <h4 class="pricing-title">Best Time to Visit</h4>
+                <div class="pricing-rows">
+                  <div class="pricing-row highlight"><span>October – May</span><span class="prange">₹14,000 – ₹28,000 /
+                      night</span><span class="pbadge peak">Peak Season</span></div>
+                  <div class="pricing-row"><span>September</span><span class="prange">₹10,000 – ₹18,000 /
+                      night</span><span class="pbadge">Shoulder</span></div>
+                  <div class="pricing-row"><span>June – August</span><span class="prange">₹7,000 – ₹12,000 /
+                      night</span><span class="pbadge deal">Best Deals</span></div>
+                </div>
+                <a href="#contact" class="btn btn-primary">Enquire Andaman</a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end prop-panels -->
+
+        <!-- Mini Property Cards Row -->
+        <div class="prop-cards-row fade-in-up">
+          <div class="prop-mini-card" onclick="switchProperty('goa')">
+            <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=400&auto=format&fit=crop"
+              alt="Goa" />
+            <div class="pmc-info"><strong>Goa</strong><span>From ₹9,900</span></div>
+          </div>
+          <div class="prop-mini-card" onclick="switchProperty('mumbai')">
+            <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=400&auto=format&fit=crop"
+              alt="Mumbai" />
+            <div class="pmc-info"><strong>Mumbai</strong><span>From ₹12,000</span></div>
+          </div>
+          <div class="prop-mini-card" onclick="switchProperty('jaipur')">
+            <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=400&auto=format&fit=crop"
+              alt="Jaipur" />
+            <div class="pmc-info"><strong>Jaipur</strong><span>From ₹11,000</span></div>
+          </div>
+          <div class="prop-mini-card" onclick="switchProperty('pondicherry')">
+            <img src="https://images.unsplash.com/photo-1584553421349-3557471bed79?q=80&w=400&auto=format&fit=crop"
+              alt="Pondicherry" />
+            <div class="pmc-info"><strong>Pondicherry</strong><span>From ₹8,500</span></div>
+          </div>
+          <div class="prop-mini-card" onclick="switchProperty('kerala')">
+            <img src="https://images.unsplash.com/photo-1593693411515-c20261bcad6e?q=80&w=400&auto=format&fit=crop"
+              alt="Kerala" />
+            <div class="pmc-info"><strong>Kerala</strong><span>From ₹10,500</span></div>
+          </div>
+          <div class="prop-mini-card" onclick="switchProperty('andaman')">
+            <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?q=80&w=400&auto=format&fit=crop"
+              alt="Andaman" />
+            <div class="pmc-info"><strong>Andaman</strong><span>From ₹14,000</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+      <div class="container grid contact-grid">
+        <div class="contact-info reveal-left">
+          <span class="overline">Connect</span>
+          <h2 class="section-title">Get in Touch</h2>
+          <p>Our concierge team is available 24/7 to assist with your journey and stay requirements.</p>
+
+          <div class="info-block">
+            <strong>Visit Us</strong>
+            <p>123 Seaside Lane, North Corner, Goa, India</p>
+          </div>
+          <div class="info-block">
+            <strong>Reservations</strong>
+            <p>+91-98362-74426</p>
+            <p>booking@oceanforthotel.com</p>
+          </div>
+        </div>
+
+        <form id="contact-form" class="contact-form reveal-right">
+          <div class="form-row">
+            <input type="text" placeholder="Your Name" required />
+          </div>
+          <div class="form-row">
+            <input type="email" placeholder="Email Address" required />
+          </div>
+          <div class="form-row">
+            <select>
+              <option>General Inquiry</option>
+              <option>Booking Modification</option>
+              <option>Special Event</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <textarea rows="4" placeholder="How can we help you?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container grid footer-grid">
+      <div class="footer-brand">
+        <h3 class="brand-name">Oceanfort</h3>
+        <p>The ultimate coastal retreat where luxury meets the ocean's tranquility.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">The Hotel</a></li>
+          <li><a href="#rooms">Rooms & Suites</a></li>
+          <li><a href="#offers">Special Offers</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Oceanfort Hotel. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="btn-top" id="btn-top" aria-label="Scroll to top">↑</button>
+
+  <!-- Fixed Booking FAB -->
+  <a href="#booking-form" class="btn-fab" id="fab-book">Book Now</a>
+
+  <!-- Booking Confirmation Modal -->
+  <div id="booking-modal"
+    style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:9998; align-items:center; justify-content:center;">
+    <div
+      style="background:#fff; border-radius:16px; padding:2.5rem; max-width:440px; width:90%; box-shadow:0 24px 64px rgba(0,0,0,0.25); position:relative; animation: fadeUp 0.3s ease;">
+      <button onclick="closeModal()"
+        style="position:absolute;top:1rem;right:1.2rem;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#888;">✕</button>
+      <div style="text-align:center; margin-bottom:1.5rem;">
+        <div style="font-size:2rem;">🏨</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; margin-top:0.5rem; color:#1a3c5e;">Complete
+          Your Booking</h3>
+        <p style="font-size:0.82rem; color:#6b7280; margin-top:0.4rem;" id="modal-summary"></p>
+        <p style="font-size:0.88rem; font-weight:600; color:#1a3c5e; margin-top:0.3rem; background:#f4f6f9; padding:0.5rem 1rem; border-radius:6px;"
+          id="modal-price"></p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:0.9rem;">
+        <div>
+          <label
+            style="font-size:0.75rem; font-weight:600; color:#374151; letter-spacing:0.5px; text-transform:uppercase;">Full
+            Name</label>
+          <input id="modal-name" type="text" placeholder="e.g. Rahul Sharma" required
+            style="width:100%; margin-top:0.35rem; padding:0.75rem 1rem; border:1.5px solid #e5e7eb; border-radius:8px; font-family:inherit; font-size:0.9rem; outline:none; transition:border 0.2s;"
+            onfocus="this.style.borderColor='#c9a96e'" onblur="this.style.borderColor='#e5e7eb'" />
+        </div>
+        <div>
+          <label
+            style="font-size:0.75rem; font-weight:600; color:#374151; letter-spacing:0.5px; text-transform:uppercase;">Email
+            Address</label>
+          <input id="modal-email" type="email" placeholder="e.g. rahul@email.com" required
+            style="width:100%; margin-top:0.35rem; padding:0.75rem 1rem; border:1.5px solid #e5e7eb; border-radius:8px; font-family:inherit; font-size:0.9rem; outline:none; transition:border 0.2s;"
+            onfocus="this.style.borderColor='#c9a96e'" onblur="this.style.borderColor='#e5e7eb'" />
+        </div>
+        <button id="modal-confirm-btn" onclick="confirmBooking()"
+          style="margin-top:0.5rem; padding:0.9rem; background:#1a3c5e; color:#fff; border:none; border-radius:8px; font-family:inherit; font-size:0.95rem; font-weight:600; cursor:pointer; transition:background 0.2s;"
+          onmouseover="this.style.background='#c9a96e'" onmouseout="this.style.background='#1a3c5e'">
+          Confirm Booking
+        </button>
+        <p style="text-align:center; font-size:0.75rem; color:#9ca3af;">No payment required now. Our team will contact
+          you.</p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+
+</html>
