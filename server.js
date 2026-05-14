@@ -13,6 +13,7 @@ app.use((req, res, next) => {
   res.setHeader("X-Frame-Options", "DENY");
   res.setHeader("X-XSS-Protection", "1; mode=block");
   res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+<<<<<<< HEAD
   res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
   res.setHeader(
     "Content-Security-Policy",
@@ -22,6 +23,8 @@ app.use((req, res, next) => {
     "img-src 'self' data: https://images.unsplash.com; " +
     "script-src 'self' 'unsafe-inline';"
   );
+=======
+>>>>>>> c01d573b33c3a0b111ee39ffa941a6b0a953854f
   next();
 });
 
@@ -46,6 +49,10 @@ function rateLimit(maxReqs, windowMs) {
     next();
   };
 }
+<<<<<<< HEAD
+=======
+// Clean up old rate-limit entries every 5 minutes
+>>>>>>> c01d573b33c3a0b111ee39ffa941a6b0a953854f
 setInterval(() => {
   const cutoff = Date.now() - 60_000;
   for (const [k, v] of rateMap) if (v.start < cutoff) rateMap.delete(k);
@@ -77,4 +84,8 @@ db.init().then(() => {
   });
 }).catch(err => {
   console.error("Database initialization failed:", err);
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> c01d573b33c3a0b111ee39ffa941a6b0a953854f
