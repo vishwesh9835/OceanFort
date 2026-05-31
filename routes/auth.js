@@ -8,10 +8,15 @@ const failMap = new Map();
 const MAX_FAILS = 5;
 const LOCK_MS = 15 * 60 * 1000; // 15-minute lockout
 
+// Constant-time string comparison — both values are padded to the same
+// fixed length so length differences don't leak timing information.
 function timingSafeEqual(a, b) {
-  const bufA = Buffer.from(String(a).padEnd(64));
-  const bufB = Buffer.from(String(b).padEnd(64));
-  return crypto.timingSafeEqual(bufA, bufB) && a === b;
+  const sa = String(a).padEnd(256, "\0");
+  const sb = String(b).padEnd(256, "\0");
+  const bufA = Buffer.from(sa);
+  const bufB = Buffer.from(sb);
+  // Buffers must be the same byte-length for timingSafeEqual
+  return crypto.timingSafeEqual(bufA, bufB) && sa.length === sb.length;
 }
 
 // POST /api/auth/login
@@ -53,3 +58,12 @@ router.post("/login", (req, res) => {
 });
 
 module.exports = router;
+
+// Clean up expired lock entries every 30 minutes to prevent memory growth
+setInterval(() => {
+  const now = Date.now();
+  for (const [ip, entry] of failMap) {
+    // Remove if lock has expired AND there have been no recent failures
+    if (entry.lockedUntil < now && entry.count === 0) failMap.delete(ip);
+  }
+}, 30 * 60 * 1000);
