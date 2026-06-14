@@ -6,22 +6,22 @@
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 document.addEventListener("DOMContentLoaded", () => {
-  const navbar       = document.getElementById("navbar");
+  const navbar = document.getElementById("navbar");
   const mobileToggle = document.getElementById("mobile-toggle");
-  const navLinks     = document.getElementById("nav-links");
-  const fabBook      = document.getElementById("fab-book");
-  const yearSpan     = document.getElementById("year");
-  const bookingForm  = document.getElementById("booking-form");
+  const navLinks = document.getElementById("nav-links");
+  const fabBook = document.getElementById("fab-book");
+  const yearSpan = document.getElementById("year");
+  const bookingForm = document.getElementById("booking-form");
 
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
   // ── Set min dates for booking inputs ───────────────────────────────────────
-  const today        = new Date().toISOString().split("T")[0];
-  const maxDate      = new Date();
+  const today = new Date().toISOString().split("T")[0];
+  const maxDate = new Date();
   maxDate.setFullYear(maxDate.getFullYear() + 1);
-  const maxDateStr   = maxDate.toISOString().split("T")[0];
+  const maxDateStr = maxDate.toISOString().split("T")[0];
 
-  const checkinInput  = document.getElementById("checkin");
+  const checkinInput = document.getElementById("checkin");
   const checkoutInput = document.getElementById("checkout");
 
   if (checkinInput) {
@@ -57,9 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // ── Mobile Menu ────────────────────────────────────────────────────────────
   mobileToggle.addEventListener("click", () => {
     const isOpen = navLinks.classList.toggle("active");
-    const spans  = mobileToggle.querySelectorAll("span");
+    const spans = mobileToggle.querySelectorAll("span");
     spans[0].style.transform = isOpen ? "rotate(45deg) translate(5px, 6px)" : "none";
-    spans[1].style.opacity   = isOpen ? "0" : "1";
+    spans[1].style.opacity = isOpen ? "0" : "1";
     spans[2].style.transform = isOpen ? "rotate(-45deg) translate(5px, -6px)" : "none";
   });
 
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".fade-in-up, .reveal-left, .reveal-right").forEach((el) => observer.observe(el));
 
   // ── Toast ──────────────────────────────────────────────────────────────────
-  window.showToast = function(message, type = "success") {
+  window.showToast = function (message, type = "success") {
     const old = document.getElementById("toast");
     if (old) old.remove();
     const t = document.createElement("div");
@@ -102,9 +102,9 @@ document.addEventListener("DOMContentLoaded", () => {
     bookingForm.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const checkin   = document.getElementById("checkin").value;
-      const checkout  = document.getElementById("checkout").value;
-      const guests    = document.getElementById("guests").value;
+      const checkin = document.getElementById("checkin").value;
+      const checkout = document.getElementById("checkout").value;
+      const guests = document.getElementById("guests").value;
       const room_type = document.getElementById("roomtype").value;
 
       // Client-side date guard
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.disabled = true;
 
       try {
-        const res  = await fetch("/api/bookings/check", {
+        const res = await fetch("/api/bookings/check", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ checkin, checkout, room_type }),
@@ -157,11 +157,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contactForm) {
     contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const inputs       = contactForm.querySelectorAll("input, select, textarea");
-      const name         = inputs[0].value.trim();
-      const email        = inputs[1].value.trim();
+      const inputs = contactForm.querySelectorAll("input, select, textarea");
+      const name = inputs[0].value.trim();
+      const email = inputs[1].value.trim();
       const inquiry_type = inputs[2].value;
-      const message      = inputs[3].value.trim();
+      const message = inputs[3].value.trim();
 
       // Client-side validation
       if (!name || !email || !message) {
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.disabled = true;
 
       try {
-        const res  = await fetch("/api/contact", {
+        const res = await fetch("/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name, email, inquiry_type, message }),
@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ── Testimonial Slider ─────────────────────────────────────────────────────
-  const slides        = document.querySelectorAll(".testimonial-slide");
+  const slides = document.querySelectorAll(".testimonial-slide");
   const dotsContainer = document.getElementById("testimonial-dots");
   let currentSlide = 0, slideInterval;
 
@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showSlide(index) {
     slides.forEach((s) => s.classList.remove("active"));
-    dots.forEach((d)   => d.classList.remove("active"));
+    dots.forEach((d) => d.classList.remove("active"));
     slides[index].classList.add("active");
     if (dots[index]) dots[index].classList.add("active");
     currentSlide = index;
@@ -255,12 +255,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-        const el     = entry.target;
+        const el = entry.target;
         const target = parseInt(el.dataset.target, 10);
         const duration = 1800;
-        const step   = Math.ceil(target / (duration / 16));
-        let current  = 0;
-        const timer  = setInterval(() => {
+        const step = Math.ceil(target / (duration / 16));
+        let current = 0;
+        const timer = setInterval(() => {
           current = Math.min(current + step, target);
           el.textContent = current.toLocaleString("en-IN");
           if (current >= target) clearInterval(timer);
@@ -279,27 +279,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ── STEP 2: Confirm Booking (called from modal) ────────────────────────────
 async function confirmBooking() {
-  const nameEl  = document.getElementById("modal-name");
+  const nameEl = document.getElementById("modal-name");
   const emailEl = document.getElementById("modal-email");
-  const name    = nameEl.value.trim();
-  const email   = emailEl.value.trim();
-  const btn     = document.getElementById("modal-confirm-btn");
+  const name = nameEl.value.trim();
+  const email = emailEl.value.trim();
+  const btn = document.getElementById("modal-confirm-btn");
 
   if (!name) { showToast("Please enter your name.", "error"); nameEl.focus(); return; }
   if (!email) { showToast("Please enter your email.", "error"); emailEl.focus(); return; }
   if (!EMAIL_RE.test(email)) { showToast("Please enter a valid email address.", "error"); emailEl.focus(); return; }
 
-  const checkin   = document.getElementById("checkin").value;
-  const checkout  = document.getElementById("checkout").value;
-  const guests    = document.getElementById("guests").value;
+  const checkin = document.getElementById("checkin").value;
+  const checkout = document.getElementById("checkout").value;
+  const guests = document.getElementById("guests").value;
   const room_type = document.getElementById("roomtype").value;
 
-  const origText    = btn.textContent;
-  btn.textContent   = "Confirming…";
-  btn.disabled      = true;
+  const origText = btn.textContent;
+  btn.textContent = "Confirming…";
+  btn.disabled = true;
 
   try {
-    const res  = await fetch("/api/bookings", {
+    const res = await fetch("/api/bookings", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ checkin, checkout, guests, room_type, name, email }),
@@ -319,7 +319,7 @@ async function confirmBooking() {
     showToast("Network error. Please try again.", "error");
   } finally {
     btn.textContent = origText;
-    btn.disabled    = false;
+    btn.disabled = false;
   }
 }
 
@@ -327,7 +327,7 @@ function closeModal() {
   const modal = document.getElementById("booking-modal");
   if (modal) {
     modal.style.display = "none";
-    document.getElementById("modal-name").value  = "";
+    document.getElementById("modal-name").value = "";
     document.getElementById("modal-email").value = "";
   }
 }
