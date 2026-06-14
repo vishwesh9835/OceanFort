@@ -285,9 +285,23 @@ async function confirmBooking() {
   const email = emailEl.value.trim();
   const btn = document.getElementById("modal-confirm-btn");
 
-  if (!name) { showToast("Please enter your name.", "error"); nameEl.focus(); return; }
-  if (!email) { showToast("Please enter your email.", "error"); emailEl.focus(); return; }
-  if (!EMAIL_RE.test(email)) { showToast("Please enter a valid email address.", "error"); emailEl.focus(); return; }
+  if (!name) {
+    showToast("Please enter your name.", "error");
+    nameEl.focus();
+    return;
+  }
+
+  if (!email) {
+    showToast("Please enter your email.", "error");
+    emailEl.focus();
+    return;
+  }
+
+  if (!EMAIL_RE.test(email)) {
+    showToast("Please enter a valid email address.", "error");
+    emailEl.focus();
+    return;
+  }
 
   const checkin = document.getElementById("checkin").value;
   const checkout = document.getElementById("checkout").value;
@@ -304,19 +318,28 @@ async function confirmBooking() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ checkin, checkout, guests, room_type, name, email }),
     });
-    const data = await res.json();
-    closeModal();
+
+    let data;
+    try {
+      data = await res.json();
+    } catch {
+      throw new Error("Invalid server response");
+    }
+
+    if (!res.ok) {
+      throw new Error(data?.message || "Booking failed");
+    }
 
     showToast(
-      data.success
-        ? `\uD83C\uDF89 Booking confirmed! Ref #${data.booking_id}. We'll contact you at ${email}.`
-        : data.message,
-      data.success ? "success" : "error"
+      `🎉 Booking confirmed! Ref #${data.booking_id}. We'll contact you at ${email}.`,
+      "success"
     );
 
-    if (data.success) document.getElementById("booking-form").reset();
-  } catch {
-    showToast("Network error. Please try again.", "error");
+    closeModal();
+    document.getElementById("booking-form").reset();
+
+  } catch (err) {
+    showToast(err.message || "Network error. Please try again.", "error");
   } finally {
     btn.textContent = origText;
     btn.disabled = false;
