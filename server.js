@@ -78,6 +78,11 @@ app.use((err, req, res, next) => {
   res.status(500).json({ success: false, message: "Internal server error." });
 });
 
+// ── 404 handler for unmatched API routes (must be before SPA catch-all) ─────
+app.use("/api", (req, res) => {
+  res.status(404).json({ success: false, message: `API route not found: ${req.method} ${req.originalUrl}` });
+});
+
 // ── Startup guard: fail fast if critical env vars are missing ───────────────
 if (!process.env.JWT_SECRET) {
   console.error("FATAL: JWT_SECRET environment variable is not set. Refusing to start.");

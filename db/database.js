@@ -36,6 +36,12 @@ function init() {
               status       TEXT DEFAULT 'unread',
               created_at   TEXT DEFAULT (datetime('now','localtime'))
             );
+            CREATE INDEX IF NOT EXISTS idx_bookings_room_status
+              ON bookings (room_type, status);
+            CREATE INDEX IF NOT EXISTS idx_bookings_status
+              ON bookings (status);
+            CREATE INDEX IF NOT EXISTS idx_contacts_status
+              ON contacts (status);
           `, (err) => {
             if (err) return reject(err);
             resolve();
